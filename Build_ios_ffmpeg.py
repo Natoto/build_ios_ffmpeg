@@ -8,7 +8,7 @@ import sys
 # clone from git
 
 
-ffmpeg_location='git://source.ffmpeg.org/ffmpeg.git'
+#ffmpeg_location='git://source.ffmpeg.org/ffmpeg.git'
 
 
 
@@ -18,11 +18,11 @@ ffmpeg_location='git://source.ffmpeg.org/ffmpeg.git'
   #  pass
 
 # clone to local directory
-subprocess.call('git clone ' + ffmpeg_location + ' ffmpeg', shell=True)
+#subprocess.call('git clone ' + ffmpeg_location + ' ffmpeg', shell=True)
 
 
 
-os.chdir('./ffmpeg')
+os.chdir('..')
 
 
 class ArchDesc(object):
@@ -70,9 +70,9 @@ for itr in (arch_list):
     
     print 'Configure for ' + itr.arch + ' build......'
 
-    clang_path   = get_xcrun_path(itr.SDK_ver, '8.2', '-find clang')
-    libtool_path = get_xcrun_path(itr.SDK_ver, '8.2', '-find libtool')
-    sdk_path     = get_xcrun_path(itr.SDK_ver, '8.2', '--show-sdk-path')
+    clang_path   = get_xcrun_path(itr.SDK_ver, '11.0', '-find clang')
+    libtool_path = get_xcrun_path(itr.SDK_ver, '11.0', '-find libtool')
+    sdk_path     = get_xcrun_path(itr.SDK_ver, '11.0', '--show-sdk-path')
     
     clang_path   = clang_path.rstrip()
     libtool_path = libtool_path.rstrip()
